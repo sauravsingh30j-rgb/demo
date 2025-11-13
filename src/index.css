@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@reference "tailwindcss/utilities";
+
+body {
+  @apply bg-blue-50;
+}
