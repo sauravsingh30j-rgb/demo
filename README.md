@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 I’ve kept your original Hindi-English mixed style and flow exactly the same 
 
@@ -54,6 +53,3 @@ Website fully responsive hai — har screen size me memes properly align hote ha
 Sab memes API se dynamically load hote hain, search feature bhi smooth hai, aur cards visually appealing lagte hain.
 
 https://web-exam-02-4gv7.vercel.app/
-=======
-# demo
->>>>>>> 0fc06a1fed240c4b2a934108a4a7df6e4b6d291e
