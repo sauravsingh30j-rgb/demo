@@ -1,59 +1,200 @@
+
+# 📝 **Git & GitHub Commands Cheat Sheet**
+
+## 📌 **Remote Repository Setup**
+
+### **Add remote URL (first time)**
+
+```bash
+git remote add origin <repository-url>
+```
+
+### **Check current remote URLs**
+
+```bash
+git remote -v
+```
+
+### **Change existing remote URL**
+
+```bash
+git remote set-url origin <new-url>
+```
+
+---
+
+## 📌 **Basic Local Git Workflow**
+
+### **Initialize a new repository**
+
+```bash
+git init
+```
+
+### **Check status**
+
+```bash
+git status
+```
+
+### **Add files to staging**
+
+```bash
+git add .
+```
+
+### **Commit changes**
+
+```bash
+git commit -m "commit message"
+```
+
+---
+
+## 📌 **Working With Branches**
+
+### **Create a branch**
+
+```bash
+git branch <branch-name>
+```
+
+### **Switch to a branch**
+
+```bash
+git checkout <branch-name>
+```
+
+### **Create and switch to a branch**
+
+```bash
+git checkout -b <branch-name>
+```
+
+### **List all branches**
+
+```bash
+git branch
+```
+
+---
+
+## 📌 **Push & Pull Operations**
+
+### **Push first time to remote**
+
+```bash
+git push -u origin main
+```
+
+### **Push changes**
+
+```bash
+git push origin main
+```
+
+### **Pull latest code before pushing**
+
+```bash
+git pull origin main
+```
+
+### **Pull with unrelated history (if projects differ)**
+
+```bash
+git pull origin main --allow-unrelated-histories
+```
+
+---
+
+## 📌 **Merge Conflicts Handling**
+
+When conflict occurs:
+
+```
+CONFLICT (content): merge conflict in <filename>
+```
+
+### **Steps to resolve**
+
+1. Open the file and remove conflict markers:
+
+```
 <<<<<<< HEAD
-
-I’ve kept your original Hindi-English mixed style and flow exactly the same 
-
-Main ek Meme Website banayi, jahan maine different memes show kiye using React and Tailwind CSS— jaise ek fun meme explorer.
-
-Sabse pehle maine React app create kiya using  Vite , uske baad install kiye ye main packages —
- tailwindcss ,  axios , aur  react-router-dom .
-Phir Tailwind setup karke usko `index.css` me import kiya, taaki saare components me styling easily apply ho jaye.
-
-Component Strucutre 
-Maine project me ye components banaye:
-
-Body.jsx→ main part jahan saare memes dikhte hain
-MemeCard.jsx → single meme card (image, name, box count, captions, etc.)
-Apicalling.jsx → API call handle karne ke liye separate component banaya
-
-functionlaity-----
-
-In  Apicalling.jsx , maine API call kiya to get memes data:
-
-
-https://api.imgflip.com/get_memes
-
-
-Aur response se `data.memes` ko return kiya.
-Phir Body.jsx me maine is function ko call karke saara meme data state me store kiya:
-
-
-const [memesData, setMemesData] = useState([]);
-
-Iske baad memes ko map karke  MemeCard.jsx  me pass kiya.
-Har card me meme ka image, name, aur kuch details (box count, captions) show kiye.
-Tailwind ke classes use karke clean aur responsive card design banaya —
-hover karne par thoda zoom effect aur shadow bhi add kiya.
-
-Maine ek search bar bhi banayi jisse user apne favorite meme ko search kar sake.
-Search ke liye input value ko `searchTerm` state me store kiya aur `handleSearch()` function ke through data filter kiya.
-
-routing-------
-Project me simple structure tha, isliye maine mostly single page layout banaya.
-Agar future me aur pages add karne ho (like “About” or “Contact”), to  React Router DOM ka use karke route define kar sakte hain.
-
-Design
-Tailwind ke utilities use kiye:
-
- `grid`, `flex`, `gap`, `shadow`, `rounded`, `hover:scale-105` for meme cards
-   `bg-gray-100`, `text-gray-800`, `p-4`, `m-2` for layout aur colors
-   `sm:`, `md:`, `lg:` classes for responsive design
-   Gradient background aur search bar styling se UI aur clean aur attractive banaya
-
-Website fully responsive hai — har screen size me memes properly align hote hain.
-
-Sab memes API se dynamically load hote hain, search feature bhi smooth hai, aur cards visually appealing lagte hain.
-
-https://web-exam-02-4gv7.vercel.app/
+your local code
 =======
-# demo
->>>>>>> 0fc06a1fed240c4b2a934108a4a7df6e4b6d291e
+remote code
+>>>>>>> main
+```
+
+2. Choose or combine the correct content
+3. Stage resolved file:
+
+```bash
+git add <filename>
+```
+
+4. Commit the merge:
+
+```bash
+git commit -m "resolved merge conflict"
+```
+
+5. Push final result:
+
+```bash
+git push origin main
+```
+
+---
+
+## ⚠ **Force Push (Dangerous – overwrites remote content)**
+
+Use only when replacing remote history completely:
+
+```bash
+git push origin main --force
+```
+
+---
+
+## 📌 **Useful Commands**
+
+### **View commit history**
+
+```bash
+git log
+```
+
+### **Undo last local commit (keep changes staged)**
+
+```bash
+git reset --soft HEAD~1
+```
+
+### **Undo last commit & remove changes**
+
+```bash
+git reset --hard HEAD~1
+```
+
+### **Clone a remote repository**
+
+```bash
+git clone <repo-url>
+```
+
+---
+
+## 🎯 Recommended Workflow
+
+```bash
+git status
+git add .
+git commit -m "updated"
+git pull origin main --allow-unrelated-histories
+# resolve conflicts if any
+git push origin main
+```
+
+Want **PDF version**? 😊
