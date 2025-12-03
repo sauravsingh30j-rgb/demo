@@ -119,14 +119,6 @@ CONFLICT (content): merge conflict in <filename>
 
 1. Open the file and remove conflict markers:
 
-```
-<<<<<<< HEAD
-your local code
-=======
-remote code
->>>>>>> main
-```
-
 2. Choose or combine the correct content
 3. Stage resolved file:
 
